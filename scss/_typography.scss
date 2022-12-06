@@ -1,0 +1,166 @@
+$heading-font: 'Circular Std', sans-serif;
+$body-font: 'Circular Std', sans-serif;
+@import "variables";
+
+/* ==========================================================================
+   Basics
+   ========================================================================== */
+body {
+  font-family: $body-font;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 32px;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 55px;
+  letter-spacing: -3px;
+
+  @media (max-width: 767px) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  &.fs-lg {
+    font-size: 150px;
+    line-height: 80%;
+
+    @media (min-width: 767px) and (max-width: 991px) {
+      font-size: 42px;
+    }
+  }
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 130%;
+  letter-spacing: -3px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  outline: none !important;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 32px;
+  color: #211e3b;
+}
+
+p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   Font
+   ========================================================================== */
+
+
+@function calculateRem($size) {
+  $rem-size: $size / 16px;
+  @return $rem-size * 1rem;
+}
+
+@mixin font-config($font-weight,$font-size,$line-height,$letter-spacing) {
+  font-weight: $font-weight;
+  font-size: calculateRem($font-size);
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+/*
+ * Custom classes for font.
+ */
+.headline1, .display-small {
+  @include font-config($headline1-weight, $headline1-size, $headline1-line-height, $headline1-tracking)
+}
+.headline2, .headline-large {
+  @include font-config($headline2-weight, $headline2-size, $headline2-line-height, $headline2-tracking);
+}
+.headline3, .headline-medium {
+  @include font-config($headline3-weight, $headline3-size, $headline3-line-height, $headline3-tracking);
+}
+.headline4, .headline-small {
+  @include font-config($headline4-weight, $headline4-size, $headline4-line-height, $headline4-tracking);
+}
+.headline5, .title-large {
+  @include font-config($headline5-weight, $headline5-size, $headline5-line-height, $headline5-tracking);
+}
+/*
+ * display fonts
+ */
+.display2, .display-large {
+  @include font-config($display2-weight, $display2-size, $display2-line-height, $display2-tracking);
+}
+.display3, .display-medium {
+  @include font-config($display3-weight, $display3-size, $display3-line-height, $display3-tracking);
+}
+/*
+ * subhead fonts
+ */
+.subhead1, .title-medium {
+  @include font-config($subhead1-weight, $subhead1-size, $subhead1-line-height, $subhead1-tracking);
+}
+
+.subhead2, .title-small {
+  @include font-config($subhead2-weight, $subhead2-size, $subhead2-line-height, $subhead2-tracking);
+}
+/*
+ * helper fonts
+ */
+
+.overline, .label-medium {
+  @include font-config($overline-weight, $overline-size, $overline-line-height, $overline-tracking);
+}
+.button, .label-large {
+  @include font-config($button-weight, $button-size, $button-line-height, $button-tracking);
+}
+.caption, .body-small {
+  @include font-config($caption-weight, $caption-size, $caption-line-height, $caption-tracking);
+}
+/*
+ * body font
+ */
+
+.body1, .body-large {
+  @include font-config($body1-weight, $body1-size, $body1-line-height, $body1-tracking);
+}
+.body2, .body-medium {
+  @include font-config($body2-weight, $body2-size, $body2-line-height, $body2-tracking);
+}
+
+

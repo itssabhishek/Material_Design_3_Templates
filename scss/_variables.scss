@@ -1,0 +1,175 @@
+
+// Do not edit directly
+// Generated on Wed, 30 Mar 2022 17:36:39 GMT
+
+//Primary Light Theme
+$color-primary-light: #6750A4;
+$color-on-primary-light: #FFFFFF;
+$color-primary-container-light: #EADDFF;
+$color-on-primary-container-light: #21005D;
+$color-secondary-light: #625B71;
+$color-on-secondary-light: #FFFFFF;
+$color-secondary-container-light: #E8DEF8;
+$color-on-secondary-container-light: #1D192B;
+$color-tertiary-light: #7D5260;
+$color-on-tertiary-light: #FFFFFF;
+$color-tertiary-container-light: #FFD8E4;
+$color-on-tertiary-container-light: #31111D;
+$color-error-light: #B3261E;
+$color-on-error-light: #FFFFFF;
+$color-error-container-light: #F9DEDC;
+$color-on-error-container-light: #410E0B;
+$color-outline-light: #79747E;
+$color-background-light: #FFFBFE;
+$color-on-background-light: #1C1B1F;
+$color-surface-light: #FFFBFE;
+$color-on-surface-light: #1C1B1F;
+$color-surface-variant-light: #E7E0EC;
+$color-on-surface-variant-light: #49454F;
+$color-inverse-surface-light: #313033;
+$color-inverse-on-surface-light: #F4EFF4;
+$color-primary-dark: #D0BCFF;
+$color-on-primary-dark: #381E72;
+$color-primary-container-dark: #4F378B;
+$color-on-primary-container-dark: #EADDFF;
+$color-secondary-dark: #CCC2DC;
+$color-on-secondary-dark: #332D41;
+$color-secondary-container-dark: #4A4458;
+$color-on-secondary-container-dark: #E8DEF8;
+$color-tertiary-dark: #EFB8C8;
+$color-on-tertiary-dark: #492532;
+$color-tertiary-container-dark: #633B48;
+$color-on-tertiary-container-dark: #FFD8E4;
+$color-error-dark: #F2B8B5;
+$color-on-error-dark: #601410;
+$color-error-container-dark: #8C1D18;
+$color-on-error-container-dark: #F2B8B5;
+$color-outline-dark: #938F99;
+$color-background-dark: #1C1B1F;
+$color-on-background-dark: #E6E1E5;
+$color-surface-dark: #1C1B1F;
+$color-on-surface-dark: #E6E1E5;
+$color-surface-variant-dark: #49454F;
+$color-on-surface-variant-dark: #CAC4D0;
+$color-inverse-surface-dark: #E6E1E5;
+$color-inverse-on-surface-dark: #313033;
+
+$md-ref-palette-black: #000000; // Black
+$md-ref-palette-white: #ffffff; // White
+
+//Font
+$headline1-weight: 400;
+$headline1-size: 36px;
+$headline1-line-height: 44px;
+$headline1-tracking: 0px;
+
+$display3-weight: 400;
+$display3-size: 45px;
+$display3-line-height: 52px;
+$display3-tracking: 0px;
+
+$display2-weight: 400;
+$display2-size: 57px;
+$display2-line-height: 64px;
+$display2-tracking: -0.25px;
+
+$headline4-weight: 400;
+$headline4-size: 24px;
+$headline4-line-height: 32px;
+$headline4-tracking: 0px;
+
+$headline3-weight: 400;
+$headline3-size: 28px;
+$headline3-line-height: 36px;
+$headline3-tracking: 0px;
+
+$headline2-weight: 400;
+$headline2-size: 32px;
+$headline2-line-height: 40px;
+$headline2-tracking: 0px;
+
+$overline-weight: 500;
+$overline-size: 12px;
+$overline-line-height: 16px;
+$overline-tracking: 0.5px;
+
+$button-weight: 500;
+$button-size: 14px;
+$button-line-height: 20px;
+$button-tracking: 0.10000000149011612px;
+
+$subhead2-weight: 500;
+$subhead2-size: 14px;
+$subhead2-line-height: 20px;
+$subhead2-tracking: 0.10000000149011612px;
+
+$subhead1-weight: 500;
+$subhead1-size: 16px;
+$subhead1-line-height: 24px;
+$subhead1-tracking: 0.15000000596046448px;
+
+$headline5-weight: 400;
+$headline5-size: 22px;
+$headline5-line-height: 28px;
+$headline5-tracking: 0px;
+
+$caption-weight: 400;
+$caption-size: 12px;
+$caption-line-height: 16px;
+$caption-tracking: 0.4000000059604645px;
+
+$body2-weight: 400;
+$body2-size: 14px;
+$body2-line-height: 20px;
+$body2-tracking: 0.25px;
+
+$body1-weight: 400;
+$body1-size: 16px;
+$body1-line-height: 24px;
+$body1-tracking: 0.5px;
+
+//Breakpoints
+$breakpoint-xl:1440px;
+$breakpoint-lg-up:1439px;
+$breakpoint-lg-down:1240px;
+$breakpoint-md-up:1239px;
+$breakpoint-md-down:905px;
+$breakpoint-sm-up:904px;
+$breakpoint-sm-down:600px;
+$breakpoint-xs:599px;
+
+
+// Extra Small devices
+@mixin xs {
+  @media (max-width: $breakpoint-xs) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: $breakpoint-sm-down) and (max-width: $breakpoint-sm-up) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: $breakpoint-md-down) and (max-width: $breakpoint-md-up) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: $breakpoint-lg-down) and (max-width: $breakpoint-lg-up) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: $breakpoint-xl)  {
+    @content;
+  }
+}
