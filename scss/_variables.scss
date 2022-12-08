@@ -1,8 +1,7 @@
-
 // Do not edit directly
 // Generated on Wed, 30 Mar 2022 17:36:39 GMT
 
-//Primary Light Theme
+//Colors
 $color-primary-light: #6750A4;
 $color-on-primary-light: #FFFFFF;
 $color-primary-container-light: #EADDFF;
@@ -56,6 +55,132 @@ $color-inverse-on-surface-dark: #313033;
 
 $md-ref-palette-black: #000000; // Black
 $md-ref-palette-white: #ffffff; // White
+
+
+$themes: (
+  color-primary: (
+    darkTheme: $color-primary-dark,
+    lightTheme: $color-primary-light,
+  ),
+  color-on-primary: (
+    darkTheme: $color-on-primary-dark,
+    lightTheme: $color-on-primary-light,
+  ),
+  color-primary-container: (
+    darkTheme: $color-primary-container-dark,
+    lightTheme: $color-primary-container-light,
+  ),
+  color-on-primary-container: (
+    darkTheme: $color-on-primary-container-dark,
+    lightTheme: $color-on-primary-container-light,
+  ),
+  color-secondary: (
+    darkTheme: $color-secondary-dark,
+    lightTheme: $color-secondary-light,
+  ),
+  color-on-secondary: (
+    darkTheme: $color-on-secondary-dark,
+    lightTheme: $color-on-secondary-light,
+  ),
+  color-secondary-container: (
+    darkTheme: $color-secondary-container-dark,
+    lightTheme: $color-secondary-container-light,
+  ),
+  color-on-secondary-container: (
+    darkTheme: $color-on-secondary-container-dark,
+    lightTheme: $color-on-secondary-container-light,
+  ),
+  color-tertiary: (
+    darkTheme: $color-tertiary-dark,
+    lightTheme: $color-tertiary-light,
+  ),
+  color-on-tertiary: (
+    darkTheme: $color-on-tertiary-dark,
+    lightTheme: $color-on-tertiary-light,
+  ),
+  color-tertiary-container: (
+    darkTheme: $color-tertiary-container-dark,
+    lightTheme: $color-tertiary-container-light,
+  ),
+  color-on-tertiary-container: (
+    darkTheme: $color-on-tertiary-container-dark,
+    lightTheme: $color-on-tertiary-container-light,
+  ),
+  color-error: (
+    darkTheme: $color-error-dark,
+    lightTheme: $color-error-light,
+  ),
+  color-on-error: (
+    darkTheme: $color-on-error-dark,
+    lightTheme: $color-on-error-light,
+  ),
+  color-error-container: (
+    darkTheme: $color-error-container-dark,
+    lightTheme: $color-error-container-light,
+  ),
+  color-on-error-container: (
+    darkTheme: $color-on-error-container-dark,
+    lightTheme: $color-on-error-container-light,
+  ),
+  color-surface: (
+    darkTheme: $color-surface-dark,
+    lightTheme: $color-surface-light,
+  ),
+  color-on-surface: (
+    darkTheme: $color-on-surface-dark,
+    lightTheme: $color-on-surface-light,
+  ),
+  color-surface-variant: (
+    darkTheme: $color-surface-variant-dark,
+    lightTheme: $color-surface-variant-light,
+  ),
+  color-on-surface-variant: (
+    darkTheme: $color-on-surface-variant-dark,
+    lightTheme: $color-on-surface-variant-light,
+  ),
+  color-outline: (
+    darkTheme: $color-outline-dark,
+    lightTheme: $color-outline-light,
+  ),
+  color-background: (
+    darkTheme: $color-background-dark,
+    lightTheme: $color-background-light,
+  ),
+  color-on-background: (
+    darkTheme: $color-on-background-dark,
+    lightTheme: $color-on-background-light,
+  ),
+  color-inverse-surface: (
+    darkTheme: $color-inverse-surface-dark,
+    lightTheme: $color-inverse-surface-light,
+  ),
+  color-inverse-on-surface: (
+    darkTheme: $color-inverse-on-surface-dark,
+    lightTheme: $color-inverse-on-surface-light,
+  ),
+  color-theme:(
+    darkTheme: $md-ref-palette-white,
+    lightTheme: $md-ref-palette-black,
+  )
+);
+
+@mixin theme($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
+.dark-mode {
+  @include theme("darkTheme");
+}
+
+.light-mode {
+  @include theme("lightTheme");
+}
 
 //Font
 $headline1-weight: 400;
@@ -129,14 +254,14 @@ $body1-line-height: 24px;
 $body1-tracking: 0.5px;
 
 //Breakpoints
-$breakpoint-xl:1440px;
-$breakpoint-lg-up:1439px;
-$breakpoint-lg-down:1240px;
-$breakpoint-md-up:1239px;
-$breakpoint-md-down:905px;
-$breakpoint-sm-up:904px;
-$breakpoint-sm-down:600px;
-$breakpoint-xs:599px;
+$breakpoint-xl: 1440px;
+$breakpoint-lg-up: 1439px;
+$breakpoint-lg-down: 1240px;
+$breakpoint-md-up: 1239px;
+$breakpoint-md-down: 905px;
+$breakpoint-sm-up: 904px;
+$breakpoint-sm-down: 600px;
+$breakpoint-xs: 599px;
 
 
 // Extra Small devices
@@ -169,7 +294,8 @@ $breakpoint-xs:599px;
 
 // Extra large devices
 @mixin xl {
-  @media (min-width: $breakpoint-xl)  {
+  @media (min-width: $breakpoint-xl) {
     @content;
   }
 }
+
