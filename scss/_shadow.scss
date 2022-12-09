@@ -1,17 +1,31 @@
-@use "sass:string";
 
+/*  TODO
+ *  These colors should be changed automatically according to theme
+ *  For now i am using light theme color as default
+ */
+
+/***********************************************
+ *                   Shadow                    *
+ ***********************************************/
+
+/*
+ *  Shadows Variables
+ */
 $shadow-colors: (
-  "primary":var(--color-primary),
-  "secondary":var(--color-secondary),
-  "tertiary":var(--color-tertiary),
-  "error":var(--color-error),
+  "primary":$color-primary-light,
+  "secondary":$color-secondary-light,
+  "tertiary":$color-tertiary-light,
+  "error":$color-error-light,
 );
 
-$elevations : "xs","sm","md","lg","xl";
+$elevations: "xs", "sm", "md", "lg", "xl";
 
+/*
+ *  Function to map colors with elevation
+ */
 @function map-color-elevation($color,$elevation) {
   @if $elevation == "xs" {
-    @return (0px 1px 2px rgba($color, 0.3), 0px 1px 3px 1px rgba($color, 0.15))
+    @return (0px 1px 2px rgba($color, 0.3) , 0px 1px 3px 1px rgba($color, 0.15))
   }
   @if $elevation == "sm" {
     @return (0px 1px 2px rgba($color, 0.3), 0px 2px 6px 2px rgba($color, 0.15))
@@ -26,6 +40,11 @@ $elevations : "xs","sm","md","lg","xl";
     @return (0px 8px 12px 6px rgba($color, 0.15), 0px 4px 4px rgba($color, 0.3))
   }
 }
+
+/*
+ *  Class generation
+ *  Naming format: "shadow-colorName-elevationType"
+ */
 
 @each $name, $color in $shadow-colors {
   @each $elevation in $elevations {

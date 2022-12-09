@@ -1,9 +1,16 @@
+/***********************************************
+ *                   Typography                *
+ ***********************************************/
+
+/*
+ * Variables
+ */
 $heading-font: 'Circular Std', sans-serif;
 $body-font: 'Circular Std', sans-serif;
 
-/* ==========================================================================
-   Basics
-   ========================================================================== */
+/*
+ * Basic settings
+ */
 body {
   font-family: $body-font;
   font-size: 17px;
@@ -84,11 +91,9 @@ p {
 }
 
 
-/* ==========================================================================
-   Font
-   ========================================================================== */
-
-
+/*
+ * Custom Classes for Typography
+ */
 @function calculateRem($size) {
   $rem-size: $size / 16px;
   @return $rem-size * 1rem;
@@ -102,7 +107,7 @@ p {
 }
 
 /*
- * Custom classes for font.
+ * Headlines and display
  */
 .headline1, .display-small {
   @include font-config($headline1-weight, $headline1-size, $headline1-line-height, $headline1-tracking)

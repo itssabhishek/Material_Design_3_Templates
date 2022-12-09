@@ -1,5 +1,12 @@
-@import "basics";
+/***********************************************
+ *                 Main SCSS file              *
+ ***********************************************/
+
+/*  DANGER
+ *  Do not change the order
+ */
 @import "variables";
+@import "basics";
 @import "fonts";
 @import "typography";
 @import "shadow";
