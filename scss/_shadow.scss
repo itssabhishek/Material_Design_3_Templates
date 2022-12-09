@@ -1,34 +1,36 @@
 @use "sass:string";
-@import "variables";
 
 $shadow-colors: (
-  "primary":var(--color-primary) ,
+  "primary":var(--color-primary),
   "secondary":var(--color-secondary),
   "tertiary":var(--color-tertiary),
   "error":var(--color-error),
 );
 
-$shadow-elevation: (
-  "xs":"0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)",
-  "sm":"0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)",
-  "md":"0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3)",
-  "lg":"0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3)",
-  "xl":"0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3)",
-);
+$elevations : "xs","sm","md","lg","xl";
 
-@function map-color-elevation($color,$elevation){
-  @each $key, $value in $shadow-elevation{
-    @if $key == $elevation {
-      @return string.unquote($value)
-    }
+@function map-color-elevation($color,$elevation) {
+  @if $elevation == "xs" {
+    @return (0px 1px 2px rgba($color, 0.3), 0px 1px 3px 1px rgba($color, 0.15))
   }
-
+  @if $elevation == "sm" {
+    @return (0px 1px 2px rgba($color, 0.3), 0px 2px 6px 2px rgba($color, 0.15))
+  }
+  @if $elevation == "md" {
+    @return (0px 4px 8px 3px rgba($color, 0.15), 0px 1px 3px rgba($color, 0.3))
+  }
+  @if $elevation == "lg" {
+    @return (0px 6px 10px 4px rgba($color, 0.15), 0px 2px 3px rgba($color, 0.3))
+  }
+  @if $elevation == "xl" {
+    @return (0px 8px 12px 6px rgba($color, 0.15), 0px 4px 4px rgba($color, 0.3))
+  }
 }
 
 @each $name, $color in $shadow-colors {
-  @each $elevation, $value in $shadow-elevation{
+  @each $elevation in $elevations {
     .shadow-#{$name}-#{$elevation} {
-      box-shadow: map-color-elevation($name,$elevation);
+      box-shadow: map-color-elevation($color, $elevation);
     }
   }
 }
