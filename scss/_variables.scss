@@ -59,6 +59,7 @@ $color-inverse-on-surface-dark: #313033;
 $md-ref-palette-black: #000000; // Black
 $md-ref-palette-white: #ffffff; // White
 
+
 /*
  * Mapping each color with theme
  */
@@ -172,11 +173,18 @@ $themes: (
 /*
  * Mixin for theming
  */
+
+// Important otherwise RGBA won't work
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
 @mixin theme($mode) {
   @each $key, $map in $themes {
     @each $prop, $color in $map {
       @if $prop == $mode {
         --#{$key}: #{$color};
+        --#{$key}-rgb: #{hexToRGB($color)};
       }
     }
   }

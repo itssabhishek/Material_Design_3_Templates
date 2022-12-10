@@ -1,0 +1,139 @@
+/* TODO
+ * Fix Shadows for dark theme
+ */
+
+/***********************************************
+ *                   Buttons                   *
+ ***********************************************/
+
+/*
+ * Button colors
+ */
+$btn-colors: (
+  "primary":var(--color-primary),
+  "secondary":var(--color-secondary),
+  "tertiary":var(--color-tertiary),
+  "error":var(--color-error),
+);
+
+/*
+ * Custom classes start
+ */
+.btn {
+  //Button Styling
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-width: 99px;
+  height: 40px;
+  padding: 10px 24px;
+  background: var(--color-primary);
+  border-radius: 100px;
+
+  //Label Styling
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: var(--color-on-primary);
+
+  //States
+  &:hover {
+    @include shadow-xs($md-ref-palette-black);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background-color: rgba(var(--color-on-surface-rgb), 0.12);
+    color: rgba(var(--color-on-surface-rgb), 0.38);
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+  }
+
+  // For outlined buttons
+  &.btn-outlined{
+    background: none;
+    border: 1px solid var(--color-outline);
+    color: var(--color-primary);
+
+    &:hover{
+      background: rgba(var(--color-primary-rgb), 0.08);
+      box-shadow: none;
+    }
+
+    &:active {
+      background: rgba(var(--color-primary-rgb), 0.12);
+    }
+  }
+
+  // For text buttons
+  &.btn-text{
+    background: none;
+    color: var(--color-primary);
+
+    &:hover{
+      background: rgba(var(--color-primary-rgb), 0.08);
+      box-shadow: none;
+    }
+
+    &:active {
+      background: rgba(var(--color-primary-rgb), 0.12);
+    }
+  }
+
+  // For elevated buttons
+  &.btn-elevated{
+    background: linear-gradient(0deg, rgba(var(--color-primary-rgb), 0.05), rgba(var(--color-primary-rgb), 0.05)), var(--color-surface);
+    color: var(--color-primary);
+    @include shadow-xs($md-ref-palette-black);
+
+    &:hover{
+      background: linear-gradient(0deg, rgba(var(--color-primary-rgb), 0.08), rgba(var(--color-primary-rgb), 0.08)), var(--color-surface);
+      @include shadow-sm($md-ref-palette-black);
+    }
+
+    &:active {
+      @include shadow-xs($md-ref-palette-black);
+    }
+  }
+
+  // For tonal buttons
+  &.btn-tonal{
+    background: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
+    &:hover{
+        @include shadow-xs($md-ref-palette-black);
+    }
+
+    &:active{
+      background: rgba(var(--color-on-secondary-container-rgb), 0.12);
+      box-shadow: none;
+    }
+  }
+
+  // For buttons containing icon
+  &.btn-icon{
+    flex-direction: row;
+    min-width: 117px;
+    height: 40px;
+  }
+
+  // For background colors
+  @each $name, $value in $btn-colors{
+    &.btn-#{$name} {
+      background: #{$value};
+    }
+  }
+}
